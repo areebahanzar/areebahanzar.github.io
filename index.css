@@ -1,0 +1,286 @@
+
+*
+ {
+   color: #87818a;
+   font-family: 'Courier New', Courier, monospace;
+   z-index:2;
+ }
+
+ #titlenamebox
+ {
+   text-align: left;
+   
+ }
+
+ #name
+ {
+  font-size: 20px;
+  float: right;
+  position: relative;
+  top: 30px;
+  right: 110px;
+  margin: 0 auto;
+  padding: 0;
+  
+ }
+ #title
+ {
+   font-size: 20px;
+   float: right;
+   position: relative;
+   top: 27px;
+   right: 80px;
+   margin: 0 auto;
+   padding: 0;
+   line-height: 1.5;
+ }
+
+ .contact
+ {
+  font-size: 20px;
+  float: right;
+  position: relative;
+  top: 27px;
+  right: 129px;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.5;
+ }
+
+
+
+ .container
+ {
+   max-width: 100%;
+   margin: 0 auto;
+   padding: 0 auto;
+   /*text-align:center;*/
+ }
+
+.supporting
+{
+  padding-top: 100px;
+  padding-bottom:100px;
+  padding-left: 0;
+  padding-right: 0;
+}
+ .supporting .col
+ {
+   padding: 0;
+   margin: 0;
+   width:600px;
+   height:600px;
+   display:inline-block;
+  /* text-align:center;*/
+ }
+
+ .supporting img
+ {
+   width:auto;
+   height:500px;
+   position:relative;
+   left: 130px;
+   bottom:90px;
+   float:none;
+ }
+ 
+ .supporting p
+ {
+   color: rgb(159, 173, 221);
+   font-weight: normal;
+   padding:4px 4px;
+   margin-bottom:20px;
+   max-width: 100%;
+   float:right;
+   position:relative;
+   top: 30px;
+   right: 30px;
+   z-index:5;
+ }
+
+ 
+ /* hamburger */
+
+ #menuToggle
+ {
+   display: inline-block;
+   position: absolute;
+  
+   top: 50px;
+   left: 50px;
+   
+   z-index: 4;
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #232323;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: tomato;
+ }
+ 
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 3; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+/* hamburger display */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #87818a;
+  border-radius: 3px;
+  
+  z-index: 6;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+ position: absolute;
+ width: 300px;
+ margin: -100px 0 0 -50px;
+ padding: 50px;
+ padding-top: 125px;
+ 
+ background: #ededed;
+ list-style-type: none;
+ -webkit-font-smoothing: antialiased;
+ /* to stop flickering of text in safari */
+ 
+ transform-origin: 0% 0%;
+ transform: translate(-100%, 0);
+ 
+ transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+
+/*background and waves learned from tutorial, link on HTML of home */
+
+.box
+{
+    position: absolute;
+    width: 100%; /* stretches the width to the whole width of the browser */
+    overflow: hidden;
+    height: 100%; /* stretches element to the whole height of the browser */
+    bottom: 1;
+    background: linear-gradient(to bottom, #170b31, #424b70); /* a gradient going from top to bottom starting with the first color and then going down to the second*/
+    z-index: 1;
+}
+ 
+.single-box
+{
+    position: absolute;
+    left:0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat; /*it should horizontally repeat but not vertically */
+    background-position: 0 bottom; /* sets the intial position for background image */
+    transform-origin: center bottom; /* sets the point around which the transformation is applied */
+    background-size: 25% 50px; /* the first number is the width of the image and the second is the height */
+    animation: animate 60s linear infinite; /* syntax is a follow: name|duration|numerical rate at which the function transforms|how long this animation lasts */
+}
+ 
+@keyframes animate
+{
+    0%
+    {
+        transform:translateX(0) translateZ(0) scaleY(1); /* translate x moves the image a certain amount on the x axis. scaleY increases of decreases the size of the element */
+    }
+    50%
+    {
+        transform:translateX(-25%) translateZ(0) scaleY(1);
+    }
+    100%
+    {
+        transform:translateX(-50%) translateZ(0) scaleY(1);
+    }
+}
