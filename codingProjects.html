@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <!-- hamburer-->
+    <link href='hamburger.css' rel='stylesheet'>
+    <nav role="navigation">
+        <div id="menuToggle">
+          <!-- A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.-->
+          <input type="checkbox" />
+         
+          <!-- hamburger spans -->
+          <span></span>
+          <span></span>
+          <span></span>
+         
+          <!-- drop down menu contents-->
+          <ul id="menu">
+            <a href="home.html"><li>Home</li></a>
+            <a href="codingProjects.html"><li>Coding Projects</li></a>
+            <a href="physicsProjects.html"><li>Physics Projects</li></a>
+            <a href="contact.html"><li>Contact</li></a>
+          </ul>
+        </div>
+      </nav>
+    <!-- END OF DROP DOWN MENU-->
+        <meta charset='UTF-8'> <!-- this allows developers to be able to use almost all characters and symbols and translates them to machine code so that the computer can read them.-->
+        <title>Parallax</title>
+        <link rel='stylesheet' href='codingProjects.css'>
+        <!-- download this file in your document after including jQuery-->
+        <!-- jQuery is a framework built with JS and it helps to add extra functionalities to websites-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="parallax.min.js"></script>
+       
+    </head>
+    <body>
+        <div class='container'>
+          <h1 class='mini'>Coding Projects</h1>
+            <!-- adds a parallax effect behind an element. we specify the type (scroll) and which image you want to go behind the element-->
+            <div class="parallax" data-parallax="scroll" data-z-index='1' data-image-src='bulb.jpg'>
+              <div class="row">
+                <div class="column">
+                  <a href='https://github.com/areebahanzar/PianoGame'><img src="pianoGame.png" alt="work" style="width:100%"></a>
+                </div>
+                <div class="column">
+                  <a href='https://github.com/areebahanzar/ChoreDoor'><img src="choreDoor.png" alt="work" style="width:100%"></a>
+                </div>
+                <div class="column">
+                  <a href='https://github.com/areebahanzar/Eight-Ball'><img src="eightBall1.jpg" alt="work" style="width:100%"></a>
+                </div>
+              </div>
+     
+            </div> <!--this zindex code makes the background appear in front of the background that is default added by the page-->
+              <h1 class='mini'> Mini Websites</h1>                 
+ 
+        <!-- putting images next to each other under the description-->
+        <div class="row">
+            <div class="column">
+              <a href='https://github.com/areebahanzar/Paint-Store'><video controls src="paintStore.mp4" alt="work" style="width:100%"></video></a>
+            </div>
+            <div class="column">
+              <a href='https://github.com/areebahanzar/FirmWebsite'><video controls src="broadwaywebsite.mp4" alt="test2" style="width:100%"></video></a>
+            </div>
+            <div class="column">
+              <a href='https://github.com/areebahanzar/restaurantWebsite'><video controls src="restaurantwebsite.mp4" alt="test3" style="width:100%"></video></a>
+            </div>
+          </div>
+          
+          <h1 class='mini'>JavaScript Projects</h1>
+        <!-- end of picture code-->
+            <div class="parallax" data-parallax="scroll" data-z-index='1' data-image-src='cubes.png'>
+              <div class="row">
+                <div class="column">
+                  <a href='https://github.com/areebahanzar/JavaScript-practice/blob/main/Meal-makes.js'><img src="food.jpg" alt="test1" style="width:100%"></a>
+                </div>
+                <div class="column">
+                  <a href='https://github.com/areebahanzar/JavaScript-practice/blob/main/Team-stats.js'><img src="running.jpg" alt="test2" style="width:100%"></a>
+                </div>
+                <div class="column">
+                  <a href='https://github.com/areebahanzar/JavaScript-practice/blob/main/Mini-Linter.js'><img src="codingPic.jpg" alt="test3" style="width:100%"></a>
+                </div>
+              </div>
+     
+            </div>
+           
+        <!-- putting images next to each other under the description-->
+        <div class="row">
+            <div class="column">
+              <a href='https://github.com/areebahanzar/PianoGame'><img src="pianoGame.png" alt="test1" style="width:100%"></a>
+            </div>
+            <div class="column">
+              <a href='https://github.com/areebahanzar/JavaScript-practice/blob/main/WhaleTalk.js'><img src="whale.jpg" alt="test2" style="width:100%"></a>
+            </div>
+            <div class="column">
+              <a href='https://github.com/areebahanzar/JavaScript-practice/blob/main/secretMessage.js'><img src="message.jpg" alt="test3" style="width:100%"></a>
+            </div>
+          </div>
+ 
+        <!-- end of picture code-->
+        </div>
+    </body>
+ 
+ 
+ 
+ 
+</html>

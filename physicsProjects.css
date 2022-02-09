@@ -1,0 +1,372 @@
+
+ /* tutorial linked in physicsProjects html */
+
+
+ /* hamburhger */
+ #menuToggle
+ {
+   display: inline-block;
+   position: relative;
+  
+   top: 50px;
+   left: 50px;
+   
+   z-index: 3;
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #232323;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: tomato;
+ }
+ 
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+/* hamburger display */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #817c7c;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+ 
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #232323;
+ }
+ 
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+ the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: absolute;
+   width: 300px;
+   margin: -100px 0 0 -50px;
+   padding: 50px;
+   padding-top: 125px;
+   
+   background: #ededed;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #menu li
+ {
+   padding: 10px 0;
+   font-size: 22px;
+ }
+ 
+ /*
+  * And let's slide it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+ }
+
+ /* end of hamburger */
+
+
+ /* twinkling code*/
+  
+/* this is the body of the entire page*/
+*
+{
+
+    margin:0;
+  
+}
+ 
+
+/* we use the font we linked in the html here */
+
+.title h1
+{
+    font-size: 44px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 40;
+    margin-bottom:10%;
+    margin-left: auto;
+    margin-right:auto;
+    text-align:center;
+ 
+    color:white;
+ 
+    /*this gives the textbox a background*/
+    background: -webkit-linear-gradient(#eee,#333);
+    
+    /*make sure the text shows*/
+    -webkit-background-clip: text;
+
+ 
+    /*dont want the text to be covered by the background*/
+    -webkit-text-fill-color: transparent;
+ 
+    /* give the text a shadow */
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+ 
+    /* the content fill the width of the page, but you can change that width*/
+    display:block;
+ 
+    /*this allows you to position an element relative to its default static position. MUST specify the offset using top bottom left right! */
+    position:relative;
+ 
+    /* we want the text to be on top of everything*/
+    z-index:1;
+}
+
+.information
+{
+    font-size: 26px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 40;
+    margin-left: 5%;
+    margin-right:auto;
+    text-align:left;
+ 
+    color:white;
+     background: -webkit-linear-gradient(rgb(109, 135, 209),#333);
+     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+     display:block;
+     position:relative;
+     z-index:1;
+}
+
+.proj
+{
+    font-size: 26px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 10;
+    margin-left: auto;
+    margin-right:5%;
+    text-align:right;
+ 
+    color:white;
+    background: -webkit-linear-gradient(rgb(129, 147, 194),#333);
+     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+     display:block;
+     position:relative;
+     z-index:1;
+}
+
+.physLink :hover
+{
+  background: -webkit-linear-gradient(rgb(30, 7, 59),rgb(36, 5, 5));
+}
+    /*ANIMATION CODE */
+    
+    
+ 
+    /* @keyframes controls the intermediate steps in CSS animation sequence by defining styles along the animation sequence */
+ 
+   /*moves the clouds from side to side */
+    @keyframes move-clouds-back
+    {
+        from
+        {
+            background-position: 0 0;
+        }
+        to
+        {
+            background-position:10000px 0;
+        }
+    }
+ 
+    /* this makes the stars twinkle */
+    @keyframes move-twinkle-back
+    {
+        from
+        {
+            background-position: 0 0;
+        }
+ 
+        to
+        {
+            background-position: 0px 5000px;
+        }
+    }
+ 
+    /* make sure the stars and clouds take up the entire page */
+    .stars, .twinkling, .clouds
+    {
+        /* all the element will be position relative its closest positioned parent element */
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        width:100%;
+        height:auto;
+        display:inline-block;
+        
+    }
+ 
+    /* add the stars background */
+    .stars{
+        background: #000    /* this overlays the stars image over the background*/ url(stars.png) round center fixed;
+        overflow: visible;
+        
+        z-index:0;
+       
+       
+        
+    }
+ 
+    /* add the twinkling function */
+    .twinkling
+    {
+        background:  url(twinkling.png) repeat top center;
+        z-index:1; /*we want it to appear over the stars image */
+        animation: /* we will call the twinkling function here */move-twinkle-back /*this is the time that it will take for it to twinkle again*/ 200s /* this creates an infinitely repeating image*/ linear infinite;
+    }
+ 
+    /* add the clouds function */
+    .clouds
+    {
+        background: transparent url(clouds.png) repeat 100% 100%;
+        z-index:1;
+        opacity: 0.4; /* the clouds are a little dark so we will lower how dark they are */
+        animation: move-clouds-back 200s linear infinite;
+   
+    }
+ /*  code for pictures right next to each other */
+
+    .container
+    {
+      animation: /* we will call the twinkling function here */move-twinkle-back /*this is the time that it will take for it to twinkle again*/ 200s /* this creates an infinitely repeating image*/ linear infinite;
+      animation: move-clouds-back 200s linear infinite;
+    }
+
+
+
+ .row
+ {
+ 
+     background: url(twinkling.png),url(stars.png),black no-repeat;
+     /* the clouds are a little dark so we will lower how dark they are */
+     
+     overflow: hidden;
+     background-size: cover;
+     width: 100%;
+     min-height: auto;
+     z-index:0;
+     animation: /* we will call the twinkling function here */move-twinkle-back /*this is the time that it will take for it to twinkle again*/ 200s /* this creates an infinitely repeating image*/ linear infinite;
+
+  
+ }
+
+
+
+.column {
+  z-index: 2;
+    float: left;
+    width: 33.33%;
+    align-content: center;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .row {
+    align-content: center;
+    display: flex;
+  
+    
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 20px;
+    margin:30;
+  }
+ 
+
+  
+   

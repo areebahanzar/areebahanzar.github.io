@@ -1,0 +1,72 @@
+.container
+{
+  font-family:'Courier New', Courier, monospace;
+    max-width: 960px; /* ensures maximum width of element box */
+    margin: 0 auto; /*top and bottom margins are zero and the left and right margins are centered*/
+    background: #f9f9f9;
+    font-size: 24px;
+    padding: 25px; /*the space between contents and border */
+ 
+}
+
+.container h1
+{
+  text-align: center;
+}
+
+ 
+/* parralax.js will create a fixed position element for each parallax image. you must ensure that the parallax objects and any layers below them are transparent so that you can see the parallax effect underneath.*/
+.parallax {
+    padding: 200px 45px; /* add padding to the whole parallax div */
+    background: transparent; /* if its not transparent you will see a color like white behind the picture. */
+}
+ 
+.info
+{
+    z-index:2; /* this makes this picture appear on top of the image */
+    position:relative; /* this means that the position of an element is relatve to the static position on the webpage */
+    color:white;
+}
+ 
+ 
+/*  code for pictures right next to each other */
+ 
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  z-index:2;
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+ 
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+ 
+  .row {
+    z-index:2;
+    display: flex;
+  }
+ 
+  .column {
+    flex: 33.33%;
+    z-index:2;
+    padding: 5px;
+    margin:20;
+  }
+  /* end of testing */
+ 
+ 
+.column :hover
+{
+  filter: brightness(50%)
+}
+  
+
+.mini
+{
+  font-size: 32px;
+}
